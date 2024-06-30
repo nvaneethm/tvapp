@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './Home.css';
-import imagesData from '../data/images.json';
-import { preloadImages } from '../utils/preloadImages';
+import React, { useState, useEffect } from "react";
+import "./Home.css";
+import imagesData from "../data/images.json";
+import { preloadImages } from "../utils/preloadImages";
 
 const Home = () => {
   const { images, interval } = imagesData;
@@ -28,7 +28,7 @@ const Home = () => {
         requestAnimationFrame(() => {
           setIsFading(false);
         });
-      }, 500); // Animation duration should match the CSS transition duration
+      }, 200); // Animation duration should match the CSS transition duration
     }, interval);
 
     return () => clearInterval(imageChangeInterval);
@@ -41,9 +41,9 @@ const Home = () => {
       ) : (
         preloadedImages.length > 0 && (
           <img
-            src={preloadedImages[currentImageIndex].src}
+            src={isFading ? "" : preloadedImages[currentImageIndex].src}
             alt={`Slide ${currentImageIndex}`}
-            className={`full-screen-image ${isFading ? 'fade-out' : 'fade-in'}`}
+            className={`full-screen-image ${isFading ? "fade-out" : "fade-in"}`}
           />
         )
       )}
