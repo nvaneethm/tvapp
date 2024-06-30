@@ -1,38 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Home.css";
 import imagesData from "../data/images.json";
-import { preloadImages } from "../utils/preloadImages";
+import useImageSlider from "../hooks/useImageSlider.js";
 
 const Home = () => {
   const { images, interval } = imagesData;
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isFading, setIsFading] = useState(false);
-  const [preloadedImages, setPreloadedImages] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    preloadImages(images).then((loadedImages) => {
-      setPreloadedImages(loadedImages);
-      setLoading(false); // Set loading to false once images are preloaded
-    });
-  }, [images]);
-
-  useEffect(() => {
-    const imageChangeInterval = setInterval(() => {
-      setIsFading(true);
-
-      // Use requestAnimationFrame to wait for the next paint cycle
-      setTimeout(() => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-
-        requestAnimationFrame(() => {
-          setIsFading(false);
-        });
-      }, 200); // Animation duration should match the CSS transition duration
-    }, interval);
-
-    return () => clearInterval(imageChangeInterval);
-  }, [images.length, interval]);
+  const { currentImageIndex, isFading, preloadedImages, loading } = useImageSlider(images, interval);
 
   return (
     <div className="home-container">
