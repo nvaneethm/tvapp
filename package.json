@@ -133,9 +133,7 @@
     ],
     "resetMocks": true
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
+  "devDependencies": {
+    "@babel/preset-react": "^7.24.7"
   }
 }
