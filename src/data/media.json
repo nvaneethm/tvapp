@@ -1,0 +1,31 @@
+{
+    "media": [
+      {
+        "type": "image",
+        "src":"https://images.unsplash.com/photo-1553792843-ffafe0bf6032?q=80&w=2921&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "duration": 5000
+      },
+      {
+        "type": "video",
+        "src": "https://cdn.bitmovin.com/content/assets/art-of-motion-dash-hls-progressive/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd",
+        "duration": 5000
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1553689405-1051840967f2?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "duration": 5000
+      },
+      {
+        "type": "video",
+        "src": "https://cdn.bitmovin.com/content/assets/art-of-motion-dash-hls-progressive/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd",
+        "duration": 5000
+      },
+      {
+        "type": "image",
+        "src":"https://images.unsplash.com/photo-1553615738-d8e0829f1d61?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "duration": 5000
+
+      }
+    ],
+    "interval": 5000
+  }
